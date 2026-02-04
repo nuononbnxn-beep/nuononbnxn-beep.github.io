@@ -1,73 +1,72 @@
-# Welcome to your Lovable project
+# PRIME_ALIMENTOS
 
-## Project info
+**Site institucional / Landing page** para apresentar serviços, portfólio e contato.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## 🔍 Visão geral
 
-There are several ways of editing your application.
+Projeto front-end moderno construído com **React + TypeScript** e empacotado com **Vite**. O foco é um site responsivo, acessível e fácil de manter, com componentes reutilizáveis em `src/components`.
 
-**Use Lovable**
+## ✅ Principais características
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- Layout responsivo (mobile-first) e suporte a temas (claro/escuro)
+- Seções principais: **Hero**, **Serviços**, **Portfólio**, **Contato**, **Footer**
+- Componentes reutilizáveis e sistema de UI baseado em **Radix/shadcn-ui** e **Tailwind CSS**
+- Formulário de contato (client-side)
+- Otimizações para performance e acessibilidade
+- Testes com `vitest` e lint com `eslint`
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠 Tecnologias
 
-**Use your preferred IDE**
+- Vite
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn-ui / Radix UI
+- Vitest (testes)
+- ESLint (linting)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## ⚙️ Scripts úteis
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Use npm para executar os scripts abaixo:
 
-Follow these steps:
+- `npm run dev` — iniciar o servidor de desenvolvimento
+- `npm run build` — construir o projeto para produção
+- `npm run build:dev` — build em modo development
+- `npm run preview` — pré-visualizar o build de produção localmente
+- `npm run lint` — rodar o ESLint
+- `npm run test` — executar testes (Vitest)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+git clone <REPO_URL>
+cd PRIME_ALIMENTOS
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 📁 Estrutura importante
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- `src/components/` — componentes reutilizáveis (Header, Hero, Services, Portfolio, Contact, Footer)
+- `src/pages/` — páginas da aplicação
+- `src/assets/` — imagens e mídias
+- `src/lib/` — utilitários
 
-**Use GitHub Codespaces**
+## 🤝 Contribuições
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Contribuições são bem-vindas:
 
-## What technologies are used for this project?
+1. Abra uma issue descrevendo a mudança desejada
+2. Crie uma branch com um nome descritivo
+3. Abra um Pull Request com descrição e testes (quando aplicável)
 
-This project is built with:
+> Dica: execute `npm run lint` e `npm run test` antes de abrir o PR ✅
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📌 Observações
 
-## How can I deploy this project?
+- Nenhuma licença específica foi adicionada ao repositório. Adicione um arquivo `LICENSE` se necessário.
+- Para dúvidas ou suporte, abra uma issue neste repositório.
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Made with ❤️ — mantenha o projeto atualizado e bem documentado para facilitar contribuições.
