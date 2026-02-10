@@ -1,5 +1,5 @@
 import logoPrime from '@/assets/logo-prime.jpeg';
-import { Facebook, Instagram, MessageCircle } from 'lucide-react';
+import { Instagram, MessageCircle } from 'lucide-react';
 
 const footerLinks = {
   services: [
@@ -16,9 +16,13 @@ const footerLinks = {
   ],
 };
 
+/* ============================================
+   REDES SOCIAIS - Edite os links abaixo:
+   - Instagram: coloque o link do perfil (ex: https://instagram.com/seuperfil)
+   - WhatsApp: coloque o número com DDI (ex: https://wa.me/5573988043664)
+   ============================================ */
 const socialLinks = [
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
+  { icon: Instagram, href: 'https://instagram.com/SEU_PERFIL_AQUI', label: 'Instagram' },
   { icon: MessageCircle, href: 'https://wa.me/5573988043664', label: 'WhatsApp' },
 ];
 
@@ -103,7 +107,9 @@ export function Footer() {
                   (73) 9 8804-3664
                 </a>
               </li>
-              <li>Bahia e Sergipe</li>
+              <li className="leading-relaxed">
+                Locais atendidos: Bahia, Sergipe, Alagoas, Ceará, Piauí, Pernambuco, Maranhão, Minas Gerais e Massachusetts/EUA
+              </li>
             </ul>
           </div>
         </div>

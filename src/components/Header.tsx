@@ -24,7 +24,7 @@ export function Header() {
             <img 
               src={logoPrime} 
               alt="Prime Engenharia e Consultoria" 
-              className="h-14 w-auto object-contain"
+              className="h-20 w-auto object-contain"
             />
           </a>
 
