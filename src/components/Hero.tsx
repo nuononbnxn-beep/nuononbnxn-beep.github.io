@@ -1,91 +1,161 @@
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { useCallback, useEffect, useState } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import { ArrowRight, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import heroSlide1 from '@/assets/hero/slide-1.jpg';
+import heroSlide2 from '@/assets/hero/slide-2.jpg';
+import heroSlide3 from '@/assets/hero/slide-3.jpg';
+
+const slides = [
+  {
+    image: heroSlide1,
+    title: 'Sua consultoria Prime',
+    subtitle: 'Excelência em consultoria industrial para negócios que valorizam resultados, qualidade e evolução contínua.',
+    cta: { text: 'Conheça nossos serviços', href: '#servicos' },
+  },
+  {
+    image: heroSlide2,
+    title: 'Prime Alimentos',
+    subtitle: 'Consultoria especializada para o setor de processamento de alimentos e bebidas com foco em qualidade e regulamentação.',
+    cta: { text: 'Saiba mais', href: '#servicos' },
+  },
+  {
+    image: heroSlide3,
+    title: 'Prime Organizacional',
+    subtitle: 'Diagnósticos e soluções para micro, pequenas e médias empresas que buscam excelência.',
+    cta: { text: 'Saiba mais', href: '#servicos' },
+  },
+];
 
 const highlights = [
   'Consultoria especializada',
-  'Atendimento em Bahia e Sergipe',
-  'Preço justo e acessível',
+  'Clientes satisfeitos em 8 estados brasileiros',
+  'Especialistas em regularização',
+];
+
+const stats = [
+  { value: '+9', label: 'Anos de experiência' },
+  { value: '8+', label: 'Estados atendidos e EUA' },
+  { value: '+150', label: 'Empresas atendidas' },
 ];
 
 export function Hero() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+    emblaApi.on('select', onSelect);
+
+    const interval = setInterval(() => emblaApi.scrollNext(), 5000);
+    return () => {
+      clearInterval(interval);
+      emblaApi.off('select', onSelect);
+    };
+  }, [emblaApi]);
+
   return (
-    <section id="home" className="relative pt-20 overflow-hidden">
-      {/* Background gradient */}
-      <div 
-        className="absolute inset-0 -z-10"
-        style={{ background: 'var(--gradient-hero)' }}
-      />
-      
-      {/* Decorative elements */}
-      <div className="absolute top-40 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-secondary/10 rounded-full blur-3xl -z-10" />
+    <section id="home" className="relative pt-20">
+      {/* Carousel */}
+      <div className="relative overflow-hidden" ref={emblaRef}>
+        <div className="flex">
+          {slides.map((slide, index) => (
+            <div key={index} className="relative flex-[0_0_100%] min-w-0">
+              <div className="relative h-[480px] md:h-[560px] lg:h-[620px]">
+                <img
+                  src={slide.image}
+                  alt={slide.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-foreground/60" />
+                <div className="relative h-full flex items-center">
+                  <div className="container-prime">
+                    <div className="max-w-2xl">
+                      <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-4 drop-shadow-lg">
+                        {slide.title}
+                      </h1>
+                      <p className="text-lg md:text-xl text-white/90 mb-8 drop-shadow">
+                        {slide.subtitle}
+                      </p>
+                      <Button variant="prime" size="lg" asChild>
+                        <a href={slide.cta.href} className="gap-2">
+                          {slide.cta.text}
+                          <ArrowRight className="w-4 h-4" />
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
 
-      <div className="container-prime section-padding">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent border border-primary/20 mb-8 animate-fade-in">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm font-medium text-accent-foreground">
-              Seu sucesso é nossa prioridade
-            </span>
-          </div>
+        {/* Navigation arrows */}
+        <button
+          onClick={scrollPrev}
+          className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/40 transition-colors"
+          aria-label="Slide anterior"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <button
+          onClick={scrollNext}
+          className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/40 transition-colors"
+          aria-label="Próximo slide"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
 
-          {/* Heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-6 animate-slide-up">
-            Sua consultoria{' '}
-            <span className="text-primary">Prime</span>
-          </h1>
+        {/* Dots */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => emblaApi?.scrollTo(index)}
+              className={`w-3 h-3 rounded-full transition-colors ${
+                index === selectedIndex ? 'bg-primary' : 'bg-white/50'
+              }`}
+              aria-label={`Ir para slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
 
-          {/* Subheading */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            Você acreditaria se eu lhe dissesse que a chave do sucesso de seu negócio pode estar mais perto do que você imagina?
-          </p>
-
-          {/* Highlights */}
-          <div className="flex flex-wrap justify-center gap-4 mb-10 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+      {/* Highlights strip */}
+      <div className="bg-accent py-4">
+        <div className="container-prime">
+          <div className="flex flex-wrap justify-center gap-6">
             {highlights.map((item, index) => (
-              <div 
-                key={index}
-                className="flex items-center gap-2 text-sm text-foreground/80"
-              >
+              <div key={index} className="flex items-center gap-2 text-sm text-foreground/80">
                 <CheckCircle2 className="w-4 h-4 text-primary" />
                 {item}
               </div>
             ))}
           </div>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>
-            <Button variant="prime" size="lg" asChild>
-              <a href="#servicos" className="gap-2">
-                Conheça nossos serviços
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="#quem-somos">Saiba mais sobre nós</a>
-            </Button>
-          </div>
         </div>
+      </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-10 border-t border-border/50">
-          <div className="text-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <div className="text-3xl md:text-4xl font-heading font-bold text-primary mb-2">+9</div>
-            <div className="text-sm text-muted-foreground">Anos de experiência</div>
-          </div>
-          <div className="text-center animate-fade-in" style={{ animationDelay: '0.5s' }}>
-            <div className="text-3xl md:text-4xl font-heading font-bold text-primary mb-2">5</div>
-            <div className="text-sm text-muted-foreground">Áreas de atuação</div>
-          </div>
-          <div className="text-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            <div className="text-3xl md:text-4xl font-heading font-bold text-primary mb-2">2</div>
-            <div className="text-sm text-muted-foreground">Estados atendidos</div>
-          </div>
-          <div className="text-center animate-fade-in" style={{ animationDelay: '0.7s' }}>
-            <div className="text-3xl md:text-4xl font-heading font-bold text-primary mb-2">100%</div>
-            <div className="text-sm text-muted-foreground">Comprometimento</div>
-          </div>
+      {/* Stats blocks */}
+      <div className="container-prime py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {stats.map((stat, index) => (
+            <div
+              key={index}
+              className={`rounded-xl p-8 text-center ${
+                index === 1
+                  ? 'bg-secondary text-secondary-foreground'
+                  : 'bg-primary text-primary-foreground'
+              }`}
+            >
+              <div className="text-4xl md:text-5xl font-heading font-bold mb-2">{stat.value}</div>
+              <div className="text-sm font-medium opacity-90">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

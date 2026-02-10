@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Facebook, Instagram, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const contactInfo = [
@@ -16,15 +16,19 @@ const contactInfo = [
   },
   {
     icon: MapPin,
-    label: 'Área de atuação',
-    value: 'Bahia e Sergipe',
+    label: 'Locais atendidos',
+    value: 'Bahia, Sergipe, Alagoas, Ceará, Piauí, Pernambuco, Maranhão, Minas Gerais e Massachusetts/EUA',
     href: null,
   },
 ];
 
+/* ============================================
+   REDES SOCIAIS - Edite os links abaixo:
+   - Instagram: coloque o link do perfil (ex: https://instagram.com/seuperfil)
+   - WhatsApp: coloque o número com DDI (ex: https://wa.me/5573988043664)
+   ============================================ */
 const socialLinks = [
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
+  { icon: Instagram, href: 'https://instagram.com/SEU_PERFIL_AQUI', label: 'Instagram' },
   { icon: MessageCircle, href: 'https://wa.me/5573988043664', label: 'WhatsApp' },
 ];
 
@@ -50,8 +54,8 @@ export function Contact() {
             {/* Contact Info */}
             <div className="space-y-4 mb-8">
               {contactInfo.map((info, index) => (
-                <div key={index} className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                <div key={index} className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <info.icon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
@@ -64,7 +68,7 @@ export function Contact() {
                         {info.value}
                       </a>
                     ) : (
-                      <p className="font-semibold text-foreground">{info.value}</p>
+                      <p className="font-semibold text-foreground text-sm leading-relaxed">{info.value}</p>
                     )}
                   </div>
                 </div>
@@ -94,7 +98,7 @@ export function Contact() {
           {/* Right - Contact Form */}
           <div className="bg-card rounded-2xl p-8 border border-border/50 shadow-card">
             <h3 className="text-xl font-heading font-bold text-foreground mb-6">
-              Solicite um orçamento
+              Fale com um especialista
             </h3>
             <form className="space-y-5">
               <div className="grid sm:grid-cols-2 gap-4">
