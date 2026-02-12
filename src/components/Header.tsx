@@ -4,13 +4,18 @@ import { Button } from '@/components/ui/button';
 import logoPrime from '@/assets/logo-prime.jpeg';
 
 const navLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'Quem Somos', href: '#quem-somos' },
-  { name: 'Serviços', href: '#servicos' },
-  { name: 'Por que a Prime', href: '#por-que-prime' },
-  { name: 'Portfólio', href: '#portfolio' },
-  { name: 'Contato', href: '#contato' },
+  { name: 'Home', id: 'home' },
+  { name: 'Quem Somos', id: 'quem-somos' },
+  { name: 'Serviços', id: 'servicos' },
+  { name: 'Por que a Prime', id: 'por-que-prime' },
+  { name: 'Portfólio', id: 'portfolio' },
+  { name: 'Contato', id: 'contato' },
 ];
+
+const scrollToSection = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+};
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +25,7 @@ export function Header() {
       <div className="container-prime">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3">
+          <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className="flex items-center gap-3">
             <img 
               src={logoPrime} 
               alt="Prime Engenharia e Consultoria" 
@@ -31,13 +36,13 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.name}
-                href={link.href}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-200"
+                onClick={() => scrollToSection(link.id)}
+                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-200 bg-transparent border-none cursor-pointer"
               >
                 {link.name}
-              </a>
+              </button>
             ))}
           </nav>
 
@@ -67,14 +72,13 @@ export function Header() {
           <div className="lg:hidden py-4 border-t border-border/50 animate-fade-in">
             <nav className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <button
                   key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-base font-medium text-foreground/80 hover:text-primary transition-colors py-2"
+                  onClick={() => { scrollToSection(link.id); setIsMenuOpen(false); }}
+                  className="text-base font-medium text-foreground/80 hover:text-primary transition-colors py-2 bg-transparent border-none cursor-pointer text-left"
                 >
                   {link.name}
-                </a>
+                </button>
               ))}
               <div className="flex flex-col gap-3 pt-4 border-t border-border/50">
                 <a href="tel:+5573988043664" className="flex items-center gap-2 text-foreground/70">
