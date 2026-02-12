@@ -1,18 +1,23 @@
 import logoPrime from '@/assets/logo-prime.jpeg';
 import { Instagram, MessageCircle } from 'lucide-react';
 
+const scrollToSection = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+};
+
 const footerLinks = {
   services: [
-    { name: 'Prime Organizacional', href: '#servicos' },
-    { name: 'Prime Alimentos', href: '#servicos' },
-    { name: 'Prime Produção e Qualidade', href: '#servicos' },
-    { name: 'Prime Ambiental', href: '#servicos' },
-    { name: 'Prime Cursos', href: '#servicos' },
+    { name: 'Prime Organizacional', id: 'servicos' },
+    { name: 'Prime Alimentos', id: 'servicos' },
+    { name: 'Prime Produção e Qualidade', id: 'servicos' },
+    { name: 'Prime Ambiental', id: 'servicos' },
+    { name: 'Prime Cursos', id: 'servicos' },
   ],
   company: [
-    { name: 'Quem Somos', href: '#quem-somos' },
-    { name: 'Portfólio', href: '#portfolio' },
-    { name: 'Contato', href: '#contato' },
+    { name: 'Quem Somos', id: 'quem-somos' },
+    { name: 'Portfólio', id: 'portfolio' },
+    { name: 'Contato', id: 'contato' },
   ],
 };
 
@@ -65,12 +70,12 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.services.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href={link.href}
-                    className="text-sm text-background/70 hover:text-primary transition-colors"
+                  <button 
+                    onClick={() => scrollToSection(link.id)}
+                    className="text-sm text-background/70 hover:text-primary transition-colors bg-transparent border-none cursor-pointer p-0"
                   >
                     {link.name}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -82,12 +87,12 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href={link.href}
-                    className="text-sm text-background/70 hover:text-primary transition-colors"
+                  <button 
+                    onClick={() => scrollToSection(link.id)}
+                    className="text-sm text-background/70 hover:text-primary transition-colors bg-transparent border-none cursor-pointer p-0"
                   >
                     {link.name}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
