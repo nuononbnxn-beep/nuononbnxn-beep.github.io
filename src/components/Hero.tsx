@@ -9,21 +9,24 @@ import heroSlide3 from '@/assets/hero/slide-3.jpg';
 const slides = [
   {
     image: heroSlide1,
-    title: 'Sua consultoria Prime',
+    title: 'Consultoria Prime',
     subtitle: 'Excelência em consultoria industrial para negócios que valorizam resultados, qualidade e evolução contínua.',
-    cta: { text: 'Conheça nossos serviços', href: '#servicos' },
+    cta: { text: 'Fale conosco', href: '#contato' },
+    centered: true,
   },
   {
     image: heroSlide2,
-    title: 'Prime Alimentos',
-    subtitle: 'Consultoria especializada para o setor de processamento de alimentos e bebidas com foco em qualidade e regulamentação.',
+    title: 'Prime Alimentos e Bebidas',
+    subtitle: 'Consultoria especializada na indústria de alimentos e bebidas com foco em qualidade e regulamentação.',
     cta: { text: 'Saiba mais', href: '#servicos' },
+    centered: false,
   },
   {
     image: heroSlide3,
-    title: 'Prime Organizacional',
-    subtitle: 'Diagnósticos e soluções para micro, pequenas e médias empresas que buscam excelência.',
+    title: 'Prime Produção e Qualidade',
+    subtitle: 'Implementação de ferramentas técnicas para padronização e eficiência industrial.',
     cta: { text: 'Saiba mais', href: '#servicos' },
+    centered: false,
   },
 ];
 
@@ -35,7 +38,7 @@ const highlights = [
 
 const stats = [
   { value: '+9', label: 'Anos de experiência' },
-  { value: '8+', label: 'Estados atendidos e EUA' },
+  { value: '+8', label: 'Estados atendidos e EUA' },
   { value: '+150', label: 'Empresas atendidas' },
 ];
 
@@ -51,7 +54,7 @@ export function Hero() {
     const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
     emblaApi.on('select', onSelect);
 
-    const interval = setInterval(() => emblaApi.scrollNext(), 5000);
+    const interval = setInterval(() => emblaApi.scrollNext(), 8000);
     return () => {
       clearInterval(interval);
       emblaApi.off('select', onSelect);
@@ -73,8 +76,8 @@ export function Hero() {
                 />
                 <div className="absolute inset-0 bg-foreground/60" />
                 <div className="relative h-full flex items-center">
-                  <div className="container-prime">
-                    <div className="max-w-2xl">
+                  <div className={`container-prime ${slide.centered ? 'text-center' : ''}`}>
+                    <div className={slide.centered ? 'max-w-3xl mx-auto' : 'max-w-2xl'}>
                       <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-4 drop-shadow-lg">
                         {slide.title}
                       </h1>
@@ -141,7 +144,7 @@ export function Hero() {
       </div>
 
       {/* Stats blocks */}
-      <div className="container-prime py-12">
+      <div className="container-prime py-16 mt-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {stats.map((stat, index) => (
             <div
@@ -152,8 +155,8 @@ export function Hero() {
                   : 'bg-primary text-primary-foreground'
               }`}
             >
-              <div className="text-4xl md:text-5xl font-heading font-bold mb-2">{stat.value}</div>
-              <div className="text-sm font-medium opacity-90">{stat.label}</div>
+              <div className="text-5xl md:text-6xl font-heading font-bold mb-2">{stat.value}</div>
+              <div className="text-base font-medium opacity-90">{stat.label}</div>
             </div>
           ))}
         </div>
