@@ -14,12 +14,16 @@ export function WhyPrime() {
               Por que a Prime?
             </span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
-              Nossos diferenciais fazem a{' '}
-              <span className="text-primary">diferença</span>
+              Nossos diferenciais geram resultados concretos para{' '}
+              <span className="text-primary">sua empresa</span>
             </h2>
+            <p className="text-muted-foreground text-lg mb-4">
+              Desde 2015, a Prime Consultoria atua lado a lado com indústrias que buscam organização, 
+              conformidade e alta performance. Com presença em 8 estados brasileiros e em Massachusetts (EUA), 
+              transformamos desafios operacionais em eficiência, segurança e crescimento estruturado.
+            </p>
             <p className="text-muted-foreground text-lg mb-8">
-              Desde 2015, a Prime Consultoria atende às necessidades de empresas em diversos setores. 
-              Nosso compromisso com a excelência e dedicação ao sucesso de nossos clientes nos torna a escolha certa.
+              Se sua empresa precisa evoluir processos e ganhar competitividade, a Prime é o próximo passo.
             </p>
             <Button variant="prime" size="lg" asChild>
               <Link to="/por-que-prime" className="gap-2">

@@ -10,23 +10,18 @@ const contactInfo = [
   },
   {
     icon: Phone,
-    label: 'Celular / WhatsApp',
+    label: 'WhatsApp / Comercial',
     value: '(73) 9 8804-3664',
     href: 'tel:+5573988043664',
   },
   {
     icon: MapPin,
-    label: 'Locais atendidos',
-    value: 'Bahia, Sergipe, Alagoas, Ceará, Piauí, Pernambuco, Maranhão, Minas Gerais e Massachusetts/EUA',
+    label: 'Atuação consolidada',
+    value: 'Presença ativa em 8 estados brasileiros — Bahia, Sergipe, Alagoas, Ceará, Piauí, Pernambuco, Maranhão e Minas Gerais — além de Massachusetts (EUA).',
     href: null,
   },
 ];
 
-/* ============================================
-   REDES SOCIAIS - Edite os links abaixo:
-   - Instagram: coloque o link do perfil (ex: https://instagram.com/seuperfil)
-   - WhatsApp: coloque o número com DDI (ex: https://wa.me/5573988043664)
-   ============================================ */
 const socialLinks = [
   { icon: Instagram, href: 'https://instagram.com/SEU_PERFIL_AQUI', label: 'Instagram' },
   { icon: MessageCircle, href: 'https://wa.me/5573988043664', label: 'WhatsApp' },
@@ -47,8 +42,8 @@ export function Contact() {
               <span className="text-primary">seu projeto</span>
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              Entre em contato conosco para agendar uma consultoria ou tirar suas dúvidas. 
-              Estamos prontos para ajudar seu negócio a alcançar o sucesso.
+              Fale com a Prime e descubra como podemos estruturar, regularizar e elevar a performance da sua empresa. 
+              Nossa equipe está pronta para entender sua demanda e apresentar a solução ideal para o seu negócio.
             </p>
 
             {/* Contact Info */}
@@ -152,11 +147,9 @@ export function Contact() {
                   className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
                 >
                   <option value="">Selecione um serviço</option>
-                  <option value="organizacional">Prime Organizacional</option>
-                  <option value="alimentos">Prime Alimentos</option>
+                  <option value="alimentos">Prime Alimentos e Bebidas</option>
                   <option value="producao">Prime Produção e Qualidade</option>
                   <option value="ambiental">Prime Ambiental</option>
-                  <option value="cursos">Prime Cursos</option>
                 </select>
               </div>
               <div>

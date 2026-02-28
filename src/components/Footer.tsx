@@ -1,4 +1,4 @@
-import logoPrime from '@/assets/logo-prime.jpeg';
+import logoPrimeWhite from '@/assets/logo-prime-white.png';
 import { Instagram, MessageCircle } from 'lucide-react';
 
 const scrollToSection = (id: string) => {
@@ -8,11 +8,9 @@ const scrollToSection = (id: string) => {
 
 const footerLinks = {
   services: [
-    { name: 'Prime Organizacional', id: 'servicos' },
-    { name: 'Prime Alimentos', id: 'servicos' },
+    { name: 'Prime Alimentos e Bebidas', id: 'servicos' },
     { name: 'Prime Produção e Qualidade', id: 'servicos' },
     { name: 'Prime Ambiental', id: 'servicos' },
-    { name: 'Prime Cursos', id: 'servicos' },
   ],
   company: [
     { name: 'Quem Somos', id: 'quem-somos' },
@@ -21,11 +19,6 @@ const footerLinks = {
   ],
 };
 
-/* ============================================
-   REDES SOCIAIS - Edite os links abaixo:
-   - Instagram: coloque o link do perfil (ex: https://instagram.com/seuperfil)
-   - WhatsApp: coloque o número com DDI (ex: https://wa.me/5573988043664)
-   ============================================ */
 const socialLinks = [
   { icon: Instagram, href: 'https://instagram.com/SEU_PERFIL_AQUI', label: 'Instagram' },
   { icon: MessageCircle, href: 'https://wa.me/5573988043664', label: 'WhatsApp' },
@@ -41,9 +34,9 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <img 
-              src={logoPrime} 
+              src={logoPrimeWhite} 
               alt="Prime Engenharia e Consultoria" 
-              className="h-16 w-auto mb-4 rounded-lg"
+              className="h-20 w-auto mb-4"
             />
             <p className="text-background/70 text-sm leading-relaxed mb-6">
               Seu sucesso é nossa prioridade. Consultoria especializada desde 2015.
@@ -113,7 +106,7 @@ export function Footer() {
                 </a>
               </li>
               <li className="leading-relaxed">
-                Locais atendidos: Bahia, Sergipe, Alagoas, Ceará, Piauí, Pernambuco, Maranhão, Minas Gerais e Massachusetts/EUA
+                Atuação consolidada: Bahia, Sergipe, Alagoas, Ceará, Piauí, Pernambuco, Maranhão, Minas Gerais e Massachusetts/EUA
               </li>
             </ul>
           </div>
@@ -125,7 +118,7 @@ export function Footer() {
             © {currentYear} Prime Engenharia e Consultoria. Todos os direitos reservados.
           </p>
           <p className="text-sm text-background/50">
-            CNPJ: XX.XXX.XXX/0001-XX
+            CNPJ: 06.349.649/0001-07
           </p>
         </div>
       </div>

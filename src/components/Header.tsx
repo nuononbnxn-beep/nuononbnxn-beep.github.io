@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import logoPrime from '@/assets/logo-prime.jpeg';
+import logoPrime from '@/assets/logo-prime-transparent.png';
 
 const navLinks = [
   { name: 'Home', id: 'home' },
@@ -29,7 +29,7 @@ export function Header() {
             <img 
               src={logoPrime} 
               alt="Prime Engenharia e Consultoria" 
-              className="h-20 w-auto object-contain"
+              className="h-24 w-auto object-contain"
             />
           </a>
 
