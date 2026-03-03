@@ -20,7 +20,7 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Instagram, href: 'https://instagram.com/SEU_PERFIL_AQUI', label: 'Instagram' },
+  { icon: Instagram, href: 'https://www.instagram.com/suaprimeconsultoria/', label: 'Instagram' },
   { icon: MessageCircle, href: 'https://wa.me/5573988043664', label: 'WhatsApp' },
 ];
 
