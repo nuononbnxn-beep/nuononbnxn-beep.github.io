@@ -106,7 +106,7 @@ export function Footer() {
                 </a>
               </li>
               <li className="leading-relaxed">
-                Atuação consolidada: Bahia, Sergipe, Alagoas, Ceará, Piauí, Pernambuco, Maranhão, Minas Gerais e Massachusetts/EUA
+                Presença ativa em 8 estados brasileiros — Bahia, Sergipe, Alagoas, Ceará, Piauí, Pernambuco, Maranhão e Minas Gerais — além de Massachusetts (EUA).
               </li>
             </ul>
           </div>

@@ -215,7 +215,7 @@ export default function WhyPrimePage() {
               Fale com um consultor especializado.
             </p>
             <a
-              href="https://wa.me/5500000000000"
+              href="https://wa.me/5573988043664"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-secondary text-secondary-foreground font-bold px-8 py-4 rounded-lg hover:bg-secondary/90 transition-colors text-lg shadow-lg hover:shadow-xl"
