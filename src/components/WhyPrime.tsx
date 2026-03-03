@@ -5,8 +5,8 @@ import whyPrimeImage from '@/assets/why-prime.jpg';
 
 export function WhyPrime() {
   return (
-    <section id="por-que-prime" className="section-padding">
-      <div id="quem-somos" className="container-prime">
+    <section id="quem-somos" className="section-padding">
+      <div className="container-prime">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
           <div>
@@ -26,7 +26,7 @@ export function WhyPrime() {
               Se sua empresa precisa evoluir processos e ganhar competitividade, a Prime é o próximo passo.
             </p>
             <Button variant="prime" size="lg" asChild>
-              <Link to="/por-que-prime" className="gap-2">
+              <Link to="/quem-somos" className="gap-2">
                 Conheça mais sobre a Prime
                 <ArrowRight className="w-4 h-4" />
               </Link>

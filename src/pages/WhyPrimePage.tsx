@@ -1,7 +1,14 @@
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { Shield, Star, Lightbulb, Handshake, Eye, Heart } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import {
+  Shield, Star, Lightbulb, Handshake, Eye, Heart,
+  ArrowRight, MapPin, CheckCircle2, Award, Users, Target,
+  ClipboardCheck, BarChart3, Settings, TrendingUp, RefreshCw,
+  MessageCircle,
+} from 'lucide-react';
 import whyPrimeImage from '@/assets/why-prime.jpg';
+import flowerWatermark from '@/assets/flower-watermark.png';
 
 const values = [
   { icon: Shield, title: 'Ética', description: 'Transparência em todas as ações.' },
@@ -12,37 +19,47 @@ const values = [
   { icon: Handshake, title: 'Coletividade', description: 'Trabalho colaborativo com clientes e equipe.' },
 ];
 
-const differentials = [
-  'Expertise Técnica desde 2015',
-  'Equipe multidisciplinar especializada',
-  'Abordagem prática e orientada a resultados',
-  'Metodologias reconhecidas pelo mercado',
-  'Atuação internacional e nacional',
-  'Foco em conformidade, padronização e desempenho',
+const methodology = [
+  { icon: ClipboardCheck, text: 'Diagnóstico técnico especializado' },
+  { icon: BarChart3, text: 'Planejamento estratégico orientado por dados' },
+  { icon: Settings, text: 'Implementação de soluções personalizadas' },
+  { icon: TrendingUp, text: 'Monitoramento de resultados' },
+  { icon: RefreshCw, text: 'Acompanhamento e melhoria contínua' },
 ];
 
-const methodology = [
-  'Diagnóstico técnico especializado',
-  'Planejamento estratégico orientado por dados',
-  'Implementação de soluções personalizadas',
-  'Monitoramento de resultados',
-  'Acompanhamento e melhoria contínua',
+const differentials = [
+  { icon: Award, text: 'Expertise Técnica desde 2015' },
+  { icon: Users, text: 'Equipe multidisciplinar especializada' },
+  { icon: Target, text: 'Abordagem prática e orientada a resultados' },
+  { icon: CheckCircle2, text: 'Metodologias reconhecidas pelo mercado' },
+  { icon: MapPin, text: 'Atuação internacional e nacional' },
+  { icon: Shield, text: 'Foco em conformidade, padronização e desempenho' },
 ];
 
 export default function WhyPrimePage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      {/* Flower watermarks */}
+      <img src={flowerWatermark} alt="" aria-hidden="true" className="pointer-events-none fixed right-[-120px] top-[30%] w-[500px] h-[500px] object-contain opacity-[0.04] z-0 select-none" />
+      <img src={flowerWatermark} alt="" aria-hidden="true" className="pointer-events-none fixed left-[-150px] bottom-[10%] w-[400px] h-[400px] object-contain opacity-[0.03] z-0 select-none rotate-45" />
+
       <Header />
-      <main className="pt-20">
+      <main className="relative z-10 pt-20">
         {/* Hero */}
         <section className="relative py-20 bg-primary">
           <div className="container-prime text-center">
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary-foreground mb-4">
-              Consultoria Industrial Especializada
+              Consultoria Industrial Especializada em Alimentos e Bebidas
             </h1>
-            <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto mb-8">
               Desde 2015 impulsionando desempenho, conformidade e resultados de industriais de todos os tamanhos no Brasil e nos EUA.
             </p>
+            <Button variant="prime" size="lg" asChild>
+              <a href="/#contato" className="gap-2">
+                Fale com um consultor
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </Button>
           </div>
         </section>
 
@@ -58,9 +75,7 @@ export default function WhyPrimePage() {
                   De alimentos à <span className="text-primary">excelência industrial</span>
                 </h2>
                 <p className="text-muted-foreground text-lg mb-6">
-                  A Prime Consultoria foi fundada em 2015 com foco inicial em atender às demandas técnicas da indústria alimentícia. 
-                  À medida que avançamos, identificamos a necessidade de aplicar nossa expertise em outras áreas industriais, 
-                  expandindo nossos serviços para qualidade, produção e gestão ambiental.
+                  A Prime Consultoria foi fundada em 2015 com foco inicial em atender às demandas técnicas da indústria alimentícia. À medida que avançamos, identificamos a necessidade de aplicar nossa expertise em outras áreas industriais, expandindo nossos serviços para qualidade, produção e gestão ambiental.
                 </p>
                 <p className="text-muted-foreground text-lg">
                   Hoje, atendemos empresas de diversos setores e portes com o mesmo compromisso de excelência e foco em resultados concretos.
@@ -83,10 +98,10 @@ export default function WhyPrimePage() {
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div className="flex gap-4 p-6 rounded-xl bg-card border border-primary/10 shadow-card">
                 <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <span className="text-3xl">🎯</span>
+                  <Target className="w-7 h-7 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-heading font-bold text-foreground text-xl mb-2">Missão</h3>
+                  <h3 className="font-heading font-bold text-foreground text-xl mb-2">Nossa Missão</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Desenvolver pessoas e empresas com soluções técnicas que geram competitividade, eficiência operacional e vantagem estratégica no mercado.
                   </p>
@@ -94,10 +109,10 @@ export default function WhyPrimePage() {
               </div>
               <div className="flex gap-4 p-6 rounded-xl bg-card border border-secondary/20 shadow-card">
                 <div className="w-14 h-14 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
-                  <span className="text-3xl">👁️</span>
+                  <Eye className="w-7 h-7 text-secondary" />
                 </div>
                 <div>
-                  <h3 className="font-heading font-bold text-foreground text-xl mb-2">Visão</h3>
+                  <h3 className="font-heading font-bold text-foreground text-xl mb-2">Nossa Visão</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Ser referência nacional e internacional em consultoria industrial, ofertando metodologias que transformam desafios em crescimento estruturado.
                   </p>
@@ -130,22 +145,38 @@ export default function WhyPrimePage() {
           </div>
         </section>
 
-        {/* Metodologia */}
+        {/* Presença Geográfica */}
         <section className="section-padding bg-muted/30">
+          <div className="container-prime text-center max-w-3xl mx-auto">
+            <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">Presença Geográfica</span>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
+              Atuação <span className="text-primary">consolidada</span> no Brasil e nos EUA
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Com presença ativa em 8 estados brasileiros — Bahia, Sergipe, Alagoas, Ceará, Piauí, Pernambuco, Maranhão e Minas Gerais — e em Massachusetts (EUA), a Prime combina visão técnica com abrangência operacional.
+            </p>
+          </div>
+        </section>
+
+        {/* Metodologia */}
+        <section className="section-padding">
           <div className="container-prime">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">Metodologia</span>
+              <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">Nossa Metodologia</span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
                 Como <span className="text-primary">transformamos</span> empresas
               </h2>
             </div>
             <div className="max-w-2xl mx-auto space-y-4">
               {methodology.map((step, index) => (
-                <div key={index} className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50">
-                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0 text-primary-foreground font-bold">
-                    {index + 1}
+                <div key={index} className="flex items-center gap-4 p-5 rounded-xl bg-card border border-border/50 hover:border-primary/20 hover:shadow-card transition-all duration-300">
+                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                    <step.icon className="w-5 h-5 text-primary-foreground" />
                   </div>
-                  <p className="text-foreground font-medium">{step}</p>
+                  <div className="flex items-center gap-3">
+                    <span className="text-sm font-bold text-primary">{String(index + 1).padStart(2, '0')}</span>
+                    <p className="text-foreground font-medium">{step.text}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -153,7 +184,7 @@ export default function WhyPrimePage() {
         </section>
 
         {/* Diferenciais */}
-        <section className="section-padding">
+        <section className="section-padding bg-muted/30">
           <div className="container-prime">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">Diferenciais</span>
@@ -161,33 +192,21 @@ export default function WhyPrimePage() {
                 Diferenciais <span className="text-primary">Prime</span>
               </h2>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
               {differentials.map((item, index) => (
-                <div key={index} className="flex items-center gap-3 p-4 rounded-xl bg-accent border border-primary/10">
-                  <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
-                  <p className="text-foreground font-medium text-sm">{item}</p>
+                <div key={index} className="flex items-center gap-4 p-5 rounded-xl bg-card border border-primary/10 hover:border-primary/30 hover:shadow-card transition-all duration-300">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <p className="text-foreground font-medium text-sm">{item.text}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Presença Geográfica */}
-        <section className="section-padding bg-muted/30">
-          <div className="container-prime text-center max-w-3xl mx-auto">
-            <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">Presença</span>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
-              Atuação <span className="text-primary">consolidada</span>
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Com presença ativa em 8 estados brasileiros — Bahia, Sergipe, Alagoas, Ceará, Piauí, Pernambuco, 
-              Maranhão e Minas Gerais — e em Massachusetts (EUA), a Prime combina visão técnica com abrangência operacional.
-            </p>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-16 bg-primary">
+        {/* CTA Final */}
+        <section className="py-20 bg-primary">
           <div className="container-prime text-center">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
               Pronto para levar sua empresa ao próximo nível?
@@ -196,9 +215,12 @@ export default function WhyPrimePage() {
               Fale com um consultor especializado.
             </p>
             <a
-              href="/#contato"
-              className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground font-bold px-8 py-4 rounded-lg hover:bg-secondary/90 transition-colors text-lg"
+              href="https://wa.me/5500000000000"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-secondary text-secondary-foreground font-bold px-8 py-4 rounded-lg hover:bg-secondary/90 transition-colors text-lg shadow-lg hover:shadow-xl"
             >
+              <MessageCircle className="w-5 h-5" />
               Fale com um consultor
             </a>
           </div>
