@@ -130,11 +130,11 @@ export function Hero() {
       </div>
 
       {/* Highlights strip */}
-      <div className="bg-accent py-4">
+      <div className="bg-accent py-6 mt-8">
         <div className="container-prime">
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap justify-center gap-8">
             {highlights.map((item, index) => (
-              <div key={index} className="flex items-center gap-2 text-sm text-foreground/80">
+              <div key={index} className="flex items-center gap-2 text-base font-medium text-foreground/80">
                 <CheckCircle2 className="w-4 h-4 text-primary" />
                 {item}
               </div>
