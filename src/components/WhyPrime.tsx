@@ -5,8 +5,8 @@ import whyPrimeImage from '@/assets/why-prime.jpg';
 
 export function WhyPrime() {
   return (
-    <section id="por-que-prime" className="section-padding">
-      <div id="quem-somos" className="container-prime">
+    <section id="quem-somos" className="section-padding">
+      <div className="container-prime">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
           <div>
