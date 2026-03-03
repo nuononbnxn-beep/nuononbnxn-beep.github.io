@@ -26,7 +26,7 @@ export function WhyPrime() {
               Se sua empresa precisa evoluir processos e ganhar competitividade, a Prime é o próximo passo.
             </p>
             <Button variant="prime" size="lg" asChild>
-              <Link to="/por-que-prime" className="gap-2">
+              <Link to="/quem-somos" className="gap-2">
                 Conheça mais sobre a Prime
                 <ArrowRight className="w-4 h-4" />
               </Link>

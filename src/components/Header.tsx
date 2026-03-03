@@ -7,7 +7,6 @@ const navLinks = [
   { name: 'Home', id: 'home' },
   { name: 'Quem Somos', id: 'quem-somos' },
   { name: 'Serviços', id: 'servicos' },
-  { name: 'Por que a Prime', id: 'por-que-prime' },
   { name: 'Portfólio', id: 'portfolio' },
   { name: 'Contato', id: 'contato' },
 ];
