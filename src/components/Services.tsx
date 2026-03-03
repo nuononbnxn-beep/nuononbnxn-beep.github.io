@@ -9,18 +9,21 @@ const services = [
     title: 'Prime Alimentos e Bebidas',
     shortDesc: 'Consultoria especializada na indústria de alimentos e bebidas.',
     areas: ['Regularização', 'Qualidade', 'Conformidade'],
+    href: '#/servicos/alimentos',
   },
   {
     image: imgProducao,
     title: 'Prime Produção e Qualidade',
     shortDesc: 'Implementação de ferramentas técnicas para padronização e eficiência industrial.',
     areas: ['APPCC', 'ISO22000', 'BPF'],
+    href: '#/servicos/producao',
   },
   {
     image: imgAmbiental,
     title: 'Prime Ambiental',
     shortDesc: 'Gestão ambiental estratégica para eficiência e responsabilidade industrial.',
     areas: ['Licenciamento', 'PGRS', 'Sustentabilidade'],
+    href: '#/servicos/ambiental',
   },
 ];
 
@@ -47,7 +50,7 @@ export function Services() {
           {services.map((service, index) => (
             <a
               key={index}
-              href="#contato"
+              href={service.href}
               className="group block bg-card rounded-xl overflow-hidden border border-border/50 transition-all duration-300 hover:shadow-card-hover hover:scale-[1.03] hover:-translate-y-1 hover:border-primary/30"
             >
               <div className="relative h-52 overflow-hidden">

@@ -8,9 +8,9 @@ const scrollToSection = (id: string) => {
 
 const footerLinks = {
   services: [
-    { name: 'Prime Alimentos e Bebidas', id: 'servicos' },
-    { name: 'Prime Produção e Qualidade', id: 'servicos' },
-    { name: 'Prime Ambiental', id: 'servicos' },
+    { name: 'Prime Alimentos e Bebidas', href: '#/servicos/alimentos' },
+    { name: 'Prime Produção e Qualidade', href: '#/servicos/producao' },
+    { name: 'Prime Ambiental', href: '#/servicos/ambiental' },
   ],
   company: [
     { name: 'Quem Somos', id: 'quem-somos' },
@@ -63,12 +63,12 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.services.map((link, index) => (
                 <li key={index}>
-                  <button 
-                    onClick={() => scrollToSection(link.id)}
-                    className="text-sm text-background/70 hover:text-primary transition-colors bg-transparent border-none cursor-pointer p-0"
+                  <a 
+                    href={link.href}
+                    className="text-sm text-background/70 hover:text-primary transition-colors"
                   >
                     {link.name}
-                  </button>
+                  </a>
                 </li>
               ))}
             </ul>
