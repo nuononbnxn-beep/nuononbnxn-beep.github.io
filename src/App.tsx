@@ -17,7 +17,7 @@ const App = () => (
       <HashRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/por-que-prime" element={<WhyPrimePage />} />
+          <Route path="/quem-somos" element={<WhyPrimePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </HashRouter>
