@@ -17,12 +17,6 @@ const Index = () => {
         aria-hidden="true"
         className="pointer-events-none fixed right-[-120px] top-[30%] w-[500px] h-[500px] object-contain opacity-[0.04] z-0 select-none"
       />
-      <img
-        src={flowerWatermark}
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none fixed left-[-150px] bottom-[10%] w-[400px] h-[400px] object-contain opacity-[0.03] z-0 select-none rotate-45"
-      />
       <Header />
       <main className="relative z-10">
         <Hero />
