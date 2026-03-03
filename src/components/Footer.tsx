@@ -63,12 +63,12 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.services.map((link, index) => (
                 <li key={index}>
-                  <button 
-                    onClick={() => scrollToSection(link.id)}
-                    className="text-sm text-background/70 hover:text-primary transition-colors bg-transparent border-none cursor-pointer p-0"
+                  <a 
+                    href={link.href}
+                    className="text-sm text-background/70 hover:text-primary transition-colors"
                   >
                     {link.name}
-                  </button>
+                  </a>
                 </li>
               ))}
             </ul>
