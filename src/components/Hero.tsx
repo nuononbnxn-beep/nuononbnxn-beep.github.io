@@ -130,7 +130,7 @@ export function Hero() {
       </div>
 
       {/* Highlights strip */}
-      <div className="bg-accent py-6 mt-8">
+      <div className="bg-accent py-5 mt-10 mb-2">
         <div className="container-prime">
           <div className="flex flex-wrap justify-center gap-8">
             {highlights.map((item, index) => (
