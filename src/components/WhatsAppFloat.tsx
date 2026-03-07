@@ -7,9 +7,9 @@ export function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Fale conosco pelo WhatsApp (73) 9 8804-3664"
-      className="fixed bottom-6 right-6 z-50 w-20 h-20 rounded-full hover:scale-110 transition-transform"
+      className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full hover:scale-110 transition-transform"
     >
-      <img src={whatsappLogo} alt="WhatsApp" className="w-full h-full object-contain" style={{ filter: 'drop-shadow(0 0 2px white) drop-shadow(0 0 2px white) drop-shadow(0 0 1px white)' }} />
+      <img src={whatsappLogo} alt="WhatsApp" className="w-full h-full object-contain" />
     </a>
   );
 }
