@@ -1,13 +1,20 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import whyPrimeImage from '@/assets/why-prime.jpg';
+
+const highlights = [
+  'Experiência no ramo',
+  'Soluções personalizadas',
+  'Empresa renomada',
+  'Resultados mensuráveis',
+];
 
 export function WhyPrime() {
   return (
     <section id="quem-somos" className="section-padding">
       <div className="container-prime">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left Content */}
           <div>
             <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">
@@ -22,9 +29,20 @@ export function WhyPrime() {
               conformidade e alta performance. Com presença em 8 estados brasileiros e em Massachusetts (EUA), 
               transformamos desafios operacionais em eficiência, segurança e crescimento estruturado.
             </p>
-            <p className="text-muted-foreground text-lg mb-8">
+            <p className="text-muted-foreground text-lg mb-6">
               Se sua empresa precisa evoluir processos e ganhar competitividade, a Prime é o próximo passo.
             </p>
+
+            {/* Highlight badges like reference */}
+            <div className="grid grid-cols-2 gap-3 mb-8">
+              {highlights.map((item, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span className="font-semibold text-foreground text-sm uppercase tracking-wide">{item}</span>
+                </div>
+              ))}
+            </div>
+
             <Button variant="prime" size="lg" asChild>
               <Link to="/quem-somos" className="gap-2">
                 Conheça mais sobre a Prime
