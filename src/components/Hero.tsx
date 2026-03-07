@@ -129,8 +129,8 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Highlights strip */}
-      <div className="bg-accent py-5 mt-10 mb-2">
+      {/* Highlights strip - flush under carousel */}
+      <div className="bg-accent py-4">
         <div className="container-prime">
           <div className="flex flex-wrap justify-center gap-8">
             {highlights.map((item, index) => (
@@ -143,13 +143,13 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Stats blocks */}
-      <div className="container-prime py-16 mt-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Stats blocks - tight spacing */}
+      <div className="container-prime py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 rounded-2xl overflow-hidden shadow-lg">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`rounded-xl p-8 text-center ${
+              className={`p-8 text-center ${
                 index === 1
                   ? 'bg-secondary text-secondary-foreground'
                   : 'bg-primary text-primary-foreground'

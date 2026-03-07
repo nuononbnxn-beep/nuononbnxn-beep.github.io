@@ -3,6 +3,7 @@ import { Hero } from '@/components/Hero';
 import { Services } from '@/components/Services';
 import { WhyPrime } from '@/components/WhyPrime';
 import { Portfolio } from '@/components/Portfolio';
+import { WhatsAppStrip } from '@/components/WhatsAppStrip';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import flowerWatermark from '@/assets/flower-watermark.png';
@@ -20,6 +21,7 @@ const Index = () => {
       <Header />
       <main className="relative z-10">
         <Hero />
+        <WhatsAppStrip />
         <Services />
         <WhyPrime />
         <Portfolio />
