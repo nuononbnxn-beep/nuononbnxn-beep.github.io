@@ -10,6 +10,7 @@ import PrimeAlimentosPage from "./pages/PrimeAlimentosPage";
 import PrimeProducaoPage from "./pages/PrimeProducaoPage";
 import PrimeAmbientalPage from "./pages/PrimeAmbientalPage";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { WhatsAppFloat } from "./components/WhatsAppFloat";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
       <Sonner />
       <HashRouter>
         <ScrollToTop />
+        <WhatsAppFloat />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/quem-somos" element={<WhyPrimePage />} />
