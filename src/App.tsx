@@ -21,6 +21,7 @@ const App = () => (
       <Sonner />
       <HashRouter>
         <ScrollToTop />
+        <WhatsAppFloat />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/quem-somos" element={<WhyPrimePage />} />
