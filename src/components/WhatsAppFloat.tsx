@@ -1,3 +1,5 @@
+import whatsappLogo from '@/assets/whatsapp-logo.png';
+
 export function WhatsAppFloat() {
   return (
     <a
@@ -5,11 +7,9 @@ export function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Fale conosco pelo WhatsApp"
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+      className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full hover:scale-110 transition-transform"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-8 h-8" fill="white">
-        <path d="M16.004 0h-.008C7.174 0 .002 7.174.002 16c0 3.498 1.13 6.742 3.046 9.374L1.054 31.25l6.156-1.953A15.9 15.9 0 0 0 16.004 32C24.826 32 32 24.826 32 16S24.826 0 16.004 0zm9.334 22.594c-.39 1.1-1.932 2.014-3.164 2.28-.844.18-1.946.322-5.656-1.216-4.748-1.966-7.806-6.778-8.04-7.094-.226-.316-1.892-2.52-1.892-4.808s1.196-3.41 1.62-3.876c.39-.428.85-.536 1.134-.536.282 0 .566.002.812.016.262.012.612-.1.958.73.356.854 1.21 2.944 1.316 3.16.108.216.18.468.036.752-.142.29-.214.468-.428.722-.214.254-.45.566-.642.76-.214.214-.436.448-.188.878.248.428 1.104 1.822 2.37 2.95 1.63 1.452 3.004 1.902 3.432 2.116.428.214.678.18.928-.108.254-.29 1.082-1.26 1.37-1.694.286-.428.574-.358.966-.214.394.142 2.484 1.172 2.912 1.386.428.214.714.322.822.498.106.178.106 1.024-.284 2.124z"/>
-      </svg>
+      <img src={whatsappLogo} alt="WhatsApp" className="w-full h-full object-contain drop-shadow-lg" />
     </a>
   );
 }
