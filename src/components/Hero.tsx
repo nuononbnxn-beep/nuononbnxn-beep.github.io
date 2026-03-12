@@ -101,14 +101,14 @@ export function Hero() {
         {/* Navigation arrows */}
         <button
           onClick={scrollPrev}
-          className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/40 transition-colors"
+          className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm items-center justify-center text-white hover:bg-white/40 transition-colors hidden md:flex"
           aria-label="Slide anterior"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
         <button
           onClick={scrollNext}
-          className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/40 transition-colors"
+          className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm items-center justify-center text-white hover:bg-white/40 transition-colors hidden md:flex"
           aria-label="Próximo slide"
         >
           <ChevronRight className="w-5 h-5" />
