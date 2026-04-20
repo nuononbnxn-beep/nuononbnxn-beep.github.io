@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import whyPrimeImage from '@/assets/corporativa.jpg';
+import whyPrimeImage from '@/assets/why-prime.jpg';
 
 const highlights = [
   'Experiência no ramo',
