@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ArrowRight, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroSlide1 from '@/assets/hero/slide-1.jpg';
+import heroSlide1 from '@/assets/corporativa.jpg';
 import heroSlide2 from '@/assets/hero/slide-2.jpg';
 import heroSlide3 from '@/assets/hero/slide-3.jpg';
 
