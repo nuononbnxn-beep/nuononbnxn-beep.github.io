@@ -7,6 +7,28 @@ import clientAcaiExpresso from '@/assets/clients/acai-expresso.jpg';
 import clientBomD from '@/assets/clients/bom-d.png';
 import clientJequitibaChocolate from '@/assets/clients/jequitiba-chocolate.png';
 import clientSucoGabriela from '@/assets/clients/suco-gabriela.jpg';
+import clientBahiaSucos from '@/assets/clients/Bahia.Sucos.png';
+import clientBomSabor from '@/assets/clients/BomSabor.png';
+import clientDegPolpas from '@/assets/clients/Deg_Polpas.png';
+import clientFrututti from '@/assets/clients/Frututti.jfif';
+import clientMegaAcai from '@/assets/clients/MegaAçai.png';
+import clientNatureFrutti from '@/assets/clients/Nature.Frutti.png';
+import clientNightBlue from '@/assets/clients/Night Blue energéticos.jfif';
+import clientPolpaEnis from '@/assets/clients/Polpa Enis logo.png';
+import clientPolpaDoVale from '@/assets/clients/Polpa.do.Vale.png';
+import clientPolpaLidery from '@/assets/clients/Polpa_Lidery.png';
+import clientPolpasIpiau from '@/assets/clients/Polpas.Ipiau.png';
+import clientPolpasDesfrutt from '@/assets/clients/Polpas_Desfrutt.png';
+import clientPolpasLaurena from '@/assets/clients/Polpas_laurena.png';
+import clientPomar from '@/assets/clients/Pomar.png';
+import clientRealDoVale from '@/assets/clients/Real.do.Vale.png';
+import clientRefrigerantesOba from '@/assets/clients/Refrigerantes.Oba.png';
+import clientSaborNatural from '@/assets/clients/Sabor Natural.png';
+import clientSaborTropical from '@/assets/clients/Sabor.Tropical.png';
+import clientSantaRosa from '@/assets/clients/SantaRosa.png';
+import clientSucolandia from '@/assets/clients/Sucolandia...png';
+import clientNaturalFrut from '@/assets/clients/natural.frut.png';
+import clientNutricau from '@/assets/clients/nutricau.png';
 
 const clients = [
   { name: '24 Horas', logo: client24Horas },
@@ -15,6 +37,28 @@ const clients = [
   { name: 'Sucos Bom D+', logo: clientBomD },
   { name: 'Jequitibá Chocolate Gourmet', logo: clientJequitibaChocolate },
   { name: 'Suco Gabriela', logo: clientSucoGabriela },
+  { name: 'Bahia Sucos', logo: clientBahiaSucos },
+  { name: 'Bom Sabor', logo: clientBomSabor },
+  { name: 'Deg Polpas', logo: clientDegPolpas },
+  { name: 'Frututti', logo: clientFrututti },
+  { name: 'Mega Açaí', logo: clientMegaAcai },
+  { name: 'Nature Frutti', logo: clientNatureFrutti },
+  { name: 'Night Blue Energéticos', logo: clientNightBlue },
+  { name: 'Polpa Enis', logo: clientPolpaEnis },
+  { name: 'Polpa do Vale', logo: clientPolpaDoVale },
+  { name: 'Polpa Lidery', logo: clientPolpaLidery },
+  { name: 'Polpas Ipiau', logo: clientPolpasIpiau },
+  { name: 'Polpas Desfrutt', logo: clientPolpasDesfrutt },
+  { name: 'Polpas Laurena', logo: clientPolpasLaurena },
+  { name: 'Pomar', logo: clientPomar },
+  { name: 'Real do Vale', logo: clientRealDoVale },
+  { name: 'Refrigerantes Oba', logo: clientRefrigerantesOba },
+  { name: 'Sabor Natural', logo: clientSaborNatural },
+  { name: 'Sabor Tropical', logo: clientSaborTropical },
+  { name: 'Santa Rosa', logo: clientSantaRosa },
+  { name: 'Sucolandia', logo: clientSucolandia },
+  { name: 'Natural Frut', logo: clientNaturalFrut },
+  { name: 'Nutricau', logo: clientNutricau },
 ];
 
 export function Portfolio() {
