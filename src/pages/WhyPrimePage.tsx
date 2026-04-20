@@ -7,7 +7,7 @@ import {
   ClipboardCheck, BarChart3, Settings, TrendingUp, RefreshCw,
   MessageCircle,
 } from 'lucide-react';
-import whyPrimeImage from '@/assets/why-prime.jpg';
+import whyPrimeImage from '@/assets/corporativa.jpg';
 import flowerWatermark from '@/assets/flower-watermark.png';
 
 const values = [
