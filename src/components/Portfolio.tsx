@@ -1,53 +1,27 @@
 import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import client24Horas from "@/assets/clients/24-horas.png";
-import clientAcaiExpresso from "@/assets/clients/acai-expresso.jpg";
-import clientBomD from "@/assets/clients/bom-d.png";
-import clientJequitibaChocolate from "@/assets/clients/jequitiba-chocolate.png";
-import clientBahiaSucos from "@/assets/clients/Bahia.Sucos.png";
-import clientDegPolpas from "@/assets/clients/Deg_Polpas.png";
-import clientFrututti from "@/assets/clients/Frututti.jfif";
-import clientMegaAcai from "@/assets/clients/MegaAcai.png";
-import clientNatureFrutti from "@/assets/clients/Nature.Frutti.png";
-import clientPolpaDoVale from "@/assets/clients/Polpa.do.Vale.png";
-import clientPolpaLidery from "@/assets/clients/Polpa_Lidery.png";
-import clientPolpasIpiau from "@/assets/clients/Polpas.Ipiau.png";
-import clientPolpasDesfrutt from "@/assets/clients/Polpas_Desfrutt.png";
-import clientPolpasLaurena from "@/assets/clients/Polpas_laurena.png";
-import clientPomar from "@/assets/clients/Pomar.png";
-import clientRealDoVale from "@/assets/clients/Real.do.Vale.png";
-import clientSaborNatural from "@/assets/clients/Sabor Natural.png";
-import clientSaborTropical from "@/assets/clients/Sabor.Tropical.png";
-import clientSantaRosa from "@/assets/clients/SantaRosa.png";
-import clientSucolandia from "@/assets/clients/Sucolandia...png";
-import clientNaturalFrut from "@/assets/clients/natural.frut.png";
-import clientNutricau from "@/assets/clients/nutricau.png";
 
-const clients = [
-  { name: "24 Horas", logo: client24Horas },
-  { name: "Acai Expresso", logo: clientAcaiExpresso },
-  { name: "Sucos Bom D+", logo: clientBomD },
-  { name: "Jequitiba Chocolate Gourmet", logo: clientJequitibaChocolate },
-  { name: "Bahia Sucos", logo: clientBahiaSucos },
-  { name: "Deg Polpas", logo: clientDegPolpas },
-  { name: "Frututti", logo: clientFrututti },
-  { name: "Mega Acai", logo: clientMegaAcai },
-  { name: "Nature Frutti", logo: clientNatureFrutti },
-  { name: "Polpa do Vale", logo: clientPolpaDoVale },
-  { name: "Polpa Lidery", logo: clientPolpaLidery },
-  { name: "Polpas Ipiau", logo: clientPolpasIpiau },
-  { name: "Polpas Desfrutt", logo: clientPolpasDesfrutt },
-  { name: "Polpas Laurena", logo: clientPolpasLaurena },
-  { name: "Pomar", logo: clientPomar },
-  { name: "Real do Vale", logo: clientRealDoVale },
-  { name: "Sabor Natural", logo: clientSaborNatural },
-  { name: "Sabor Tropical", logo: clientSaborTropical },
-  { name: "Santa Rosa", logo: clientSantaRosa },
-  { name: "Sucolandia", logo: clientSucolandia },
-  { name: "Natural Frut", logo: clientNaturalFrut },
-  { name: "Nutricau", logo: clientNutricau },
-];
+const logoModules = import.meta.glob("@/assets/clients/*.{png,jpg,jpeg,jfif,webp,svg}", {
+  eager: true,
+  import: "default",
+}) as Record<string, string>;
+
+const prettyNameFromPath = (filePath: string) => {
+  const fileName = filePath.split("/").pop() ?? "";
+  const base = fileName.replace(/\.[^/.]+$/, "");
+  return base
+    .replace(/[._-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+};
+
+const clients = Object.entries(logoModules)
+  .map(([filePath, logo]) => ({
+    name: prettyNameFromPath(filePath),
+    logo,
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name, "pt-BR"));
 
 export function Portfolio() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -80,7 +54,7 @@ export function Portfolio() {
             <div className="flex gap-6">
               {clients.map((client, index) => (
                 <div
-                  key={index}
+                  key={`${client.name}-${index}`}
                   className="min-w-0 flex-[0_0_40%] sm:flex-[0_0_28%] md:flex-[0_0_20%] lg:flex-[0_0_16%]"
                 >
                   <div className="group aspect-square rounded-xl border border-border/50 bg-card p-6 transition-all duration-500 hover:-translate-y-0.5 hover:border-primary/35 hover:shadow-card-hover">
