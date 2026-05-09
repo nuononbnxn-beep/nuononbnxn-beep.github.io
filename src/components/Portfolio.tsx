@@ -8,6 +8,7 @@ import clientJequitibaChocolate from "@/assets/clients/jequitiba-chocolate.png";
 import clientBahiaSucos from "@/assets/clients/Bahia.Sucos.png";
 import clientDegPolpas from "@/assets/clients/Deg_Polpas.png";
 import clientFrututti from "@/assets/clients/Frututti.jfif";
+import clientMegaAcai from "@/assets/clients/MegaAcai.png";
 import clientNatureFrutti from "@/assets/clients/Nature.Frutti.png";
 import clientPolpaDoVale from "@/assets/clients/Polpa.do.Vale.png";
 import clientPolpaLidery from "@/assets/clients/Polpa_Lidery.png";
@@ -31,6 +32,7 @@ const clients = [
   { name: "Bahia Sucos", logo: clientBahiaSucos },
   { name: "Deg Polpas", logo: clientDegPolpas },
   { name: "Frututti", logo: clientFrututti },
+  { name: "Mega Acai", logo: clientMegaAcai },
   { name: "Nature Frutti", logo: clientNatureFrutti },
   { name: "Polpa do Vale", logo: clientPolpaDoVale },
   { name: "Polpa Lidery", logo: clientPolpaLidery },
